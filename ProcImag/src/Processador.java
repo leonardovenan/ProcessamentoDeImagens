@@ -199,7 +199,7 @@ public class Processador {
 
     }
 
-    //Filtro feito em aula  
+    //Filtro feito passa baixa 
       
     public static Imagem filtroDaMedia(Imagem img, int[][] peso) {
         int alt = img.getAltura();
@@ -224,12 +224,11 @@ public class Processador {
                 }
                 c.setPixel(y, x, somaWP/somaW, somaWP/somaW, somaWP/somaW);
             }
-        }
-        
+        }        
         return c;
     }
     
-    //filtro passa alta feito em aula
+    //filtro passa alta
     
     public static Imagem filtroPassaAlta(Imagem img, int[][] peso) {
         int alt = img.getAltura();
@@ -249,8 +248,7 @@ public class Processador {
                 }
                 c.setPixel(y, x, somaWP/(peso.length*peso[0].length), somaWP/(peso.length*peso[0].length), somaWP/(peso.length*peso[0].length));
             }
-        }
-        
+        }        
         return c;
     }
 

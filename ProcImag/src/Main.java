@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String args[]){
-        //testaStretching();
-        testaDithering();
+        testaStretching();
+        //testaDithering();
         
     }  
     
@@ -42,10 +42,11 @@ public class Main {
     public static void testaDithering(){
         Imagem imgA = new Imagem("C:\\Users\\Leonardo\\Desktop\\ProcImag\\ProcImag\\mario.jpg");
         Dithering dit = new Dithering(imgA);
+        imgA.mostrar();
         //dit.limiarSimples(50).mostrar();
         //dit.limiarSimples(150).mostrar();
         //dit.limiarAleatorio(50, 10).mostrar();
         //dit.limiarAleatorio(50, 40).mostrar();
-        dit.limiarAleatorio(100, 25).mostrar();
+        dit.limiarAleatorio(50, 20).mostrar();
     }
 }
