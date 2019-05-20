@@ -33,7 +33,7 @@ public class Processador {
         return newImagem;
     }
     
-    public static Imagem subt(Imagem imagem1, Imagem imagem2){
+    public Imagem subt(Imagem imagem1, Imagem imagem2){
         int altura = imagem1.getAltura();
         int largura = imagem1.getLargura();
         Imagem newImagem = new Imagem(altura, largura, Imagem.GRAY);
@@ -64,7 +64,7 @@ public class Processador {
     //operadores binários
     
     
-    public static Imagem not(Imagem imagem){
+    public Imagem not(Imagem imagem){
         int altura = imagem.getAltura();
         int largura = imagem.getLargura();
         Imagem newImagem = new Imagem(altura, largura, Imagem.GRAY);
@@ -124,13 +124,13 @@ public class Processador {
         return newImagem;
     }
     
-    public static Imagem operadorXor(Imagem imagem1, Imagem imagem2){
+    public Imagem operadorXor(Imagem imagem1, Imagem imagem2){
         Imagem xor = (operadorOr(operadorAnd(imagem1,not(imagem2)),operadorAnd(not(imagem1),imagem2)));
         
         return xor;
     }
     
-    public static Imagem operadorSub(Imagem imagem1, Imagem imagem2){
+    public Imagem operadorSub(Imagem imagem1, Imagem imagem2){
         Imagem sub = (operadorAnd(imagem1, not(imagem2)));
         
         return sub;
@@ -201,7 +201,7 @@ public class Processador {
 
     //Filtro feito passa baixa 
       
-    public static Imagem filtroDaMedia(Imagem img, int[][] peso) {
+    public Imagem filtroDaMedia(Imagem img, int[][] peso) {
         int alt = img.getAltura();
         int larg = img.getLargura();
         int raio = (peso.length - 1) / 2, somaWP, somaW = 0;

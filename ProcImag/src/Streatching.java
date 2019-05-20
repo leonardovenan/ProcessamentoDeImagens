@@ -26,7 +26,74 @@ public class Streatching {
         for(int y=0; y < alt; y++){
             for(int x = 0; x <larg; x++){
                 cor = img.getPixel(y, x, 0);
-                out.setPixel(y, x, (int)(a*cor+b), (int)(a*cor+b), (int)(a*cor+b));
+                if((int)(a*cor+b)>255){
+                    out.setPixel(y, x, 255, 255, 255);
+                }
+                else{
+                    out.setPixel(y, x, (int)(a*cor+b), (int)(a*cor+b), (int)(a*cor+b));
+                }                
+            }
+        }
+        return out;
+    }
+    
+    public Imagem quadradoRaiz(float a){
+        Imagem out = new Imagem(alt, larg, Imagem.GRAY);
+        int cor;
+        
+        for(int y=0; y < alt; y++){
+            for(int x = 0; x < larg; x++){
+                cor = img.getPixel(y, x, 0);
+                if(((int)(a*Math.sqrt(cor))) > 255){
+                    out.setPixel(y, x, 255, 255, 255);
+                }
+                else{
+                    out.setPixel(y, x, (int)(a*Math.sqrt(cor)), (int)(a*Math.sqrt(cor)), (int)(a*Math.sqrt(cor)));
+                }                
+            }
+        }        
+        return out;
+    }
+    
+    public Imagem quadrado(float a){
+        Imagem out = new Imagem(alt, larg, Imagem.GRAY);
+        int cor;
+        
+        for(int y=0; y < alt; y++){
+            for(int x = 0; x < larg; x++){
+                cor = img.getPixel(y, x, 0);                
+                if(((int)(a*(Math.pow(cor, 2)))) > 255){
+                    out.setPixel(y, x, 255, 255, 255);
+                }
+                else{
+                    out.setPixel(y, x, (int)(a*(Math.pow(cor, 2))), (int)(a*(Math.pow(cor, 2))), (int)(a*(Math.pow(cor, 2))));
+                }
+            }
+        }        
+        return out;
+    }
+    
+    public Imagem log(float a){
+        Imagem out = new Imagem(alt, larg, Imagem.GRAY);
+        int cor;
+        
+        for(int y=0; y < alt; y++){
+            for(int x = 0; x < larg; x++){
+                cor = img.getPixel(y, x, 0);
+                out.setPixel(y, x, (int)(a*(Math.log(cor + 1))), (int)(a*(Math.log(cor + 1))), (int)(a*(Math.log(cor + 1))));
+            }
+        }        
+        return out;
+    }
+    
+    public Imagem negativa(float a, float b){
+        Imagem out = new Imagem(alt, larg, Imagem.GRAY);
+        int cor;
+        
+        for(int y=0; y < alt; y++){
+            for(int x = 0; x <larg; x++){
+                cor = img.getPixel(y, x, 0);
+                out.setPixel(y, x, (int)(-(a*cor+b)), (int)(-(a*cor+b)), (int)(-(a*cor+b)));
             }
         }
         return out;
